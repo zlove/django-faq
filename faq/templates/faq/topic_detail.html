@@ -1,8 +1,8 @@
 {% extends "faq/base.html" %}
 
-{% block title %}{{ block.super }}: {{ topic }}{% endblock %}
+{% block faq_title %}{{ block.super }} {{ topic }}{% endblock %}
 
-{% block body %}
+{% block faq_content %}
 <h3>{{ topic }}</h3>
 <dl>
 {% for question in questions %}
@@ -10,5 +10,4 @@
   <dd class="answer">{{ question.answer }}</dd>
 {% endfor %}
 </dl>
-
 {% endblock %}

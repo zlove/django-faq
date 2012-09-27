@@ -1,14 +1,11 @@
 {% extends "faq/base.html" %}
 
-{% block title %}{{ block.super }}: Question - {{ object.text|truncatewords:30}}{% endblock %}
+{% block faq_title %}{{ block.super }} Question - {{ object.text|truncatewords:30}}{% endblock %}
 
+{% block faq_content %}
+<div class="faq-question">
+  <h3>{{ object.text }}</h3>
 
-{% block body %}
-
-{{ object.text }}
-
-<br/>
-
-{{ object.answer }}
-
+  {{ object.answer|safe }}
+</div>
 {% endblock %}
